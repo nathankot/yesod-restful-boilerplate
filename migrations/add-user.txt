@@ -1,0 +1,10 @@
+Depends:
+Apply: |
+  CREATE TABLE "user" (
+    "id" SERIAL  PRIMARY KEY UNIQUE,
+    "email" VARCHAR NOT NULL,
+    "password" VARCHAR NULL);
+
+  ALTER TABLE "user"
+  ADD CONSTRAINT "unique_user"
+  UNIQUE("email");

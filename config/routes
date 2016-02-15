@@ -1,0 +1,7 @@
+/favicon.ico   FaviconR GET
+/robots.txt    RobotsR GET
+
+/api/users     UsersR POST
+/api/sessions  SessionsR POST DELETE
+
+/              StaticR Static appStatic

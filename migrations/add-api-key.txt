@@ -1,0 +1,16 @@
+Depends: add-user
+Apply: |
+  CREATE TABLE "api_key" (
+    "id" SERIAL PRIMARY KEY UNIQUE,
+    "value" VARCHAR NOT NULL,
+    "user_id" INT8 NOT NULL,
+    "expires" TIMESTAMP WITH TIME ZONE NOT NULL);
+
+  ALTER TABLE "api_key"
+  ADD CONSTRAINT "unique_api_key"
+  UNIQUE("value");
+
+  ALTER TABLE "api_key"
+  ADD CONSTRAINT "api_key_user_id_fkey"
+  FOREIGN KEY("user_id") REFERENCES "user"("id")
+  ON DELETE CASCADE;

@@ -1,0 +1,3 @@
+app-is-testing: true
+database:
+  database: new-app-testing
